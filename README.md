@@ -12,7 +12,7 @@ A modern, responsive React portfolio for a UI/UX enthusiast and front-end develo
 - **Projects**: Dynamic showcase of featured work
 - **Skills**: Visual list of technical proficiencies
 - **Growth**: Highlights current learning and goals
-- **Contact**: Email, phone, and location details with a working contact form (demo)
+- **Contact**: Email, phone, and location details with a working contact form
 
 ## Tech Stack
 - React (Vite)
