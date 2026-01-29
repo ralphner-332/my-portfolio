@@ -329,8 +329,8 @@ function App() {
       {/* Footer */}
       <footer className="bg-slate-950 border-t border-slate-700/30 py-8 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400">© {new Date().getFullYear()} Ralphner L. Capangpangan. All rights reserved.</p>
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-gray-400 text-center">© {new Date().getFullYear()} Ralphner L. Capangpangan. All rights reserved.</p>
             <div className="flex gap-4">
               <a href="https://github.com/ralphner-332" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition">GitHub</a>
             </div>
