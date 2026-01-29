@@ -1,6 +1,7 @@
 
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
 
 // Data for projects, skills, and growth
 const projects = [
@@ -69,6 +70,10 @@ const currentlyLearning = [
 ];
 
 function App() {
+  const formRef = useRef();
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState(null);
   // Smooth scroll for nav buttons
   useEffect(() => {
     const handleNavClick = (e) => {
@@ -241,7 +246,30 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-gradient-to-br from-slate-700/50 to-slate-800/50 border border-cyan-400/20 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-cyan-400 mb-6">Send a Message</h3>
-              <form className="space-y-4" onSubmit={e => { e.preventDefault(); alert('Message sent! (This is a demo)'); e.target.reset(); }}>
+              <form
+                ref={formRef}
+                className="space-y-4"
+                onSubmit={async e => {
+                  e.preventDefault();
+                  setSending(true);
+                  setSent(false);
+                  setError(null);
+                  try {
+                    await emailjs.sendForm(
+                      'service_wqwujj5',
+                      'template_d1t0v57',
+                      formRef.current,
+                      '9xlz9MP-vhc8XXyZP'
+                    );
+                    setSent(true);
+                    formRef.current.reset();
+                  } catch (err) {
+                    setError('Failed to send. Please try again.');
+                  } finally {
+                    setSending(false);
+                  }
+                }}
+              >
                 <div>
                   <label className="block text-gray-300 mb-2">Name</label>
                   <input type="text" name="name" placeholder="Your name" className="w-full bg-slate-900/50 border border-cyan-400/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition" />
@@ -254,7 +282,15 @@ function App() {
                   <label className="block text-gray-300 mb-2">Message</label>
                   <textarea name="message" placeholder="Your message..." rows={4} className="w-full bg-slate-900/50 border border-cyan-400/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition resize-none"></textarea>
                 </div>
-                <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 py-3 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">Send Message</button>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 py-3 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition disabled:opacity-60"
+                  disabled={sending}
+                >
+                  {sending ? 'Sending...' : 'Send Message'}
+                </button>
+                {sent && <div className="text-green-400 text-center pt-2">Message sent successfully!</div>}
+                {error && <div className="text-red-400 text-center pt-2">{error}</div>}
               </form>
             </div>
             <div className="space-y-8">

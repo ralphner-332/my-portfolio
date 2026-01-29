@@ -1,15 +1,22 @@
 
-# Ralph's Portfolio
 
-A clean, gloomy-themed React portfolio for a UI/UX enthusiast and front-end developer. Features:
 
-- **About Me**: Introduction and background
-- **Big Three Projects**: Showcases growth, learning, and aspirations
-- **Growth Tab**: Highlights current learning and growth mindset
+# Ralphner's Portfolio
+
+A modern, responsive React portfolio for a UI/UX enthusiast and front-end developer, styled with Tailwind CSS.
+
+## Features
+- Elegant theme with smooth gradients and subtle animations
+- Fully responsive layout for all devices
+- **About**: Personal introduction and background
+- **Projects**: Dynamic showcase of featured work
+- **Skills**: Visual list of technical proficiencies
+- **Growth**: Highlights current learning and goals
+- **Contact**: Email, phone, and location details with a working contact form (demo)
 
 ## Tech Stack
 - React (Vite)
-- Custom CSS (gloomy theme, Montserrat font)
+- Tailwind CSS
 
 ## Quick Start
 1. Install dependencies:
@@ -22,7 +29,7 @@ A clean, gloomy-themed React portfolio for a UI/UX enthusiast and front-end deve
 	```
 
 ## Deployment
-Optimized for Vercel. Just connect your repo and deploy!
+Ready for Vercel, Netlify, or any static hosting. Just connect your repo and deploy!
 
 ## License
 MIT
