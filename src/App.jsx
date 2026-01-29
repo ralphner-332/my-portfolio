@@ -331,14 +331,8 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400">© {new Date().getFullYear()} Ralphner L. Capangpangan. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition">Terms of Service</a>
-            </div>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition">GitHub</a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition">LinkedIn</a>
+              <a href="https://github.com/ralphner-332" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition">GitHub</a>
             </div>
           </div>
         </div>
